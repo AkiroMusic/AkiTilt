@@ -20,3 +20,6 @@ libs/
 # OS
 .DS_Store
 Thumbs.db
+
+# Contest submission kit (local only)
+contest/
