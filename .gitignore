@@ -1,0 +1,22 @@
+# Build output
+build*/
+
+# Ready-to-test binaries (rebuilt automatically)
+release/
+
+# Third-party reference material (local only)
+Reference/
+
+# JUCE (cloned at setup)
+libs/
+
+# IDE / tooling
+.vs/
+.vscode/
+.idea/
+*.user
+.zcode/
+
+# OS
+.DS_Store
+Thumbs.db

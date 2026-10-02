@@ -1,0 +1,58 @@
+name: build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, macos-latest]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cache JUCE 8.0.8
+        id: juce-cache
+        uses: actions/cache@v4
+        with:
+          path: libs/JUCE
+          key: juce-8.0.8
+
+      - name: Fetch JUCE
+        if: steps.juce-cache.outputs.cache-hit != 'true'
+        run: git clone --depth 1 --branch 8.0.8 https://github.com/juce-framework/JUCE.git libs/JUCE
+
+      - name: Configure (macOS, universal binary)
+        if: runner.os == 'macOS'
+        run: >
+          cmake -B build -G Xcode
+          -DCMAKE_OSX_ARCHITECTURES="arm64;x86_64"
+          -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0
+
+      - name: Configure (Windows)
+        if: runner.os == 'Windows'
+        run: cmake -B build
+
+      - name: Build
+        run: cmake --build build --config Release --parallel
+
+      - name: Run offline DSP tests
+        shell: bash
+        run: ./build/AkiTiltTests_artefacts/Release/AkiTiltTests | tee test_output.txt
+
+      # TODO: add a pluginval validation pass (v2.1) once it is packaged for CI use.
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: AkiTilt-${{ matrix.os }}
+          path: |
+            release/
+            test_output.txt
