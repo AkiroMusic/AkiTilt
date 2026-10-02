@@ -68,25 +68,25 @@ target_link_libraries(AkiTilt
         juce::juce_recommended_warning_flags)
 
 # Keep a ready-to-test copy of the binaries in <root>/release. macOS targets
-# are bundle *directories* (.vst3/.component/.app); cmake -E copy_directory
-# copies a directory's CONTENTS, so each bundle needs its named destination,
-# and copy_if_different cannot take a directory at all.
+# are bundles (.vst3/.component/.app): TARGET_FILE points at the inner
+# executable there, so TARGET_BUNDLE_DIR is the thing to copy, into a named
+# destination (copy_directory copies a directory's CONTENTS).
 if (APPLE)
     add_custom_command(TARGET AkiTilt_VST3 POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_SOURCE_DIR}/release
         COMMAND ${CMAKE_COMMAND} -E copy_directory
-            $<TARGET_FILE:AkiTilt_VST3> ${CMAKE_SOURCE_DIR}/release/AkiTilt.vst3)
+            $<TARGET_BUNDLE_DIR:AkiTilt_VST3> ${CMAKE_SOURCE_DIR}/release/AkiTilt.vst3)
     if (TARGET AkiTilt_AU)
         add_custom_command(TARGET AkiTilt_AU POST_BUILD
             COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_SOURCE_DIR}/release
             COMMAND ${CMAKE_COMMAND} -E copy_directory
-                $<TARGET_FILE:AkiTilt_AU> ${CMAKE_SOURCE_DIR}/release/AkiTilt.component)
+                $<TARGET_BUNDLE_DIR:AkiTilt_AU> ${CMAKE_SOURCE_DIR}/release/AkiTilt.component)
     endif()
     if (TARGET AkiTilt_Standalone)
         add_custom_command(TARGET AkiTilt_Standalone POST_BUILD
             COMMAND ${CMAKE_COMMAND} -E make_directory ${CMAKE_SOURCE_DIR}/release
             COMMAND ${CMAKE_COMMAND} -E copy_directory
-                $<TARGET_FILE:AkiTilt_Standalone> ${CMAKE_SOURCE_DIR}/release/AkiTilt.app)
+                $<TARGET_BUNDLE_DIR:AkiTilt_Standalone> ${CMAKE_SOURCE_DIR}/release/AkiTilt.app)
     endif()
 else()
     add_custom_command(TARGET AkiTilt_VST3 POST_BUILD
