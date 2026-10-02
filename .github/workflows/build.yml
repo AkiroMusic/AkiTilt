@@ -47,6 +47,16 @@ jobs:
         shell: bash
         run: ./build/AkiTiltTests_artefacts/Release/AkiTiltTests | tee test_output.txt
 
+      # Apple's official AU validation: proves the .component registers and
+      # passes AudioUnit validation on a stock macOS — the gate Logic uses.
+      - name: Validate AU (auval)
+        if: runner.os == 'macOS'
+        run: |
+          mkdir -p ~/Library/Audio/Plug-Ins/Components
+          cp -R build/AkiTilt_artefacts/Release/AU/AkiTilt.component ~/Library/Audio/Plug-Ins/Components/
+          killall -9 AudioComponentRegistrar 2>/dev/null || true
+          auval -v aufx Aktl Akr0
+
       # TODO: add a pluginval validation pass (v2.1) once it is packaged for CI use.
 
       - name: Upload build artifacts
