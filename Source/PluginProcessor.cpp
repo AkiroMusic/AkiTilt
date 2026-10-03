@@ -33,8 +33,11 @@ AkiTiltAudioProcessor::AkiTiltAudioProcessor()
 
 void AkiTiltAudioProcessor::prepareToPlay (double sampleRate, int)
 {
-    const int channels = juce::jmax (1, getTotalNumOutputChannels());
-    engine.prepare (sampleRate, channels);
+    // The engine is always prepared for both channels: hosts may call
+    // prepareToPlay before the stereo layout settles, and a mono preparation
+    // would leave channel 1 silent once stereo blocks arrive. Per-block we
+    // still loop over the actual channel count, so mono buses behave the same.
+    engine.prepare (sampleRate, 2);
     pitchShifter.prepare (sampleRate, 2);
     tiltEQ.prepare (sampleRate, 2);
     noiseBed.prepare (sampleRate, 2);

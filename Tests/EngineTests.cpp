@@ -180,6 +180,33 @@ int main()
                 "stereo engine channels track identically");
     }
     {
+        // A host may call prepareToPlay before the stereo layout settles;
+        // preparing with one channel must not leave the right channel dead.
+        aki::dsp::FormantShifterEngine engine;
+        engine.prepare (testSampleRate, 1);
+        engine.setTargets (300.0f, 10.0f);
+        bool finite = true;
+        float maxDiff = 0.0f;
+        for (int i = 0; i < (int) (testSampleRate * 1.0); ++i)
+        {
+            const float x = 0.4f * (float) std::sin (2.0 * juce::MathConstants<double>::pi * 220.0
+                                                     * i / testSampleRate);
+            engine.writeInput (0, x);
+            engine.writeInput (1, x);
+            const float l = engine.readOutput (0);
+            const float r = engine.readOutput (1);
+            engine.advance();
+            if (i > 6000)
+            {
+                if (! std::isfinite (l) || ! std::isfinite (r))
+                    finite = false;
+                maxDiff = std::max (maxDiff, std::abs (l - r));
+            }
+        }
+        expect (finite && maxDiff < 1.0e-4f,
+                "engine prepared mono still serves both channels");
+    }
+    {
         // Stereo pitch shifter consistency (shared ring state regression).
         aki::dsp::PitchShifter shifter;
         shifter.prepare (testSampleRate, 2);

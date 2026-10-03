@@ -265,6 +265,15 @@ render natively at your display's DPI and become crisp. (FL Studio and most
 other hosts render natively, which is why the difference shows up only in
 Live; this applies to every plugin, not just AkiTilt.)
 
+**Width seems to do nothing.** Width is a true mid/side widener: it scales
+the difference between left and right. On **mono or centred material the
+side signal is mathematically zero**, so no M/S widener on the market can
+change it — the knob only acts on stereo content that already has spread
+(spread reverb returns, doubled guitars, wide synths). Check your source:
+a mono vocal sample stays centred no matter what. AkiTilt processes stereo
+material fully stereo (every stage is per-channel); it simply doesn't fake
+stereo from mono.
+
 **Auto Formant drifts back in quiet passages.** By design: without a
 detectable pitch the tracked shift glides to the knob value over ~1.5 s, so
 the sound settles instead of freezing on a stale note. Sing/play sustained
@@ -451,6 +460,8 @@ A/B 保存两套完整设置；来回切换才能诚实地判断改动。
 **切换 FFT 尺寸时有一瞬静音。** 更换分析窗口会重启 formant 引擎：湿路短暂无声,上报的延迟也随之变化。请停止播放时切换,或用 Dry/Wet 的短暂下降来掩盖。
 
 **在 Ableton Live 里界面发糊（其他宿主清晰）。** Live 的按插件设置 **"自动缩放插件窗口"（Auto-Scale Plug-in Window）** 会对界面做位图拉伸,而不是让插件按原生分辨率渲染。在 Live 浏览器里右键本插件、取消勾选自动缩放,再重新打开插件窗口——AkiTilt 会按显示器原生 DPI 渲染,恢复清晰。（FL Studio 等大多数宿主都是原生渲染,所以差异只在 Live 出现;这是所有插件的通病,并非 AkiTilt 特有。）
+
+**Width 好像没效果。** Width 是真正的中侧（M/S）加宽:它缩放的是左右声道的差异。**单声道或居中素材的侧信号在数学上恒为零**,市面上任何 M/S 加宽器都无法改变它——旋钮只作用于本身带有声场展开的立体声内容（展开的混响返回、双轨吉他、宽合成器）。请检查素材本身:单声道人声采样无论如何都会保持居中。AkiTilt 对立体声素材是完整的立体声处理（每一级都按声道独立）;它只是不从单声道伪造立体声。
 
 **Auto Formant 在安静段落会滑回去。** 这是设计行为：检测不到音高时,跟踪的偏移在约 1.5 秒内滑回旋钮值,让声音落定而不是冻在旧的音符上。想锁得稳,就唱/弹持续音。
 

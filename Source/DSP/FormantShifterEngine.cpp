@@ -5,7 +5,12 @@ namespace aki::dsp
 
 void FormantShifterEngine::prepare (double sampleRate, int channels)
 {
-    activeChannels = juce::jlimit (1, maxChannels, channels);
+    // Always serve both channels. Hosts may call prepareToPlay before the
+    // bus layout settles (reporting mono), and a mono preparation would leave
+    // channel 1 silent once stereo blocks arrive. Mono buses still loop over
+    // their actual channel count in processBlock, so nothing else changes.
+    juce::ignoreUnused (channels);
+    activeChannels = maxChannels;
 
     // One transform object and one window table per supported order. Both are
     // fixed-size in JUCE and non-copyable, so the whole set is built once and
