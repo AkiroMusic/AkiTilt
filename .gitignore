@@ -23,3 +23,6 @@ Thumbs.db
 
 # Contest submission kit (local only)
 competition/
+
+# ZCode workspace config (local tooling)
+.zcodeignore
