@@ -257,6 +257,14 @@ window restarts the formant engine: the wet path is silent for a moment and
 the reported latency changes. Switch while playback is stopped, or let the
 Dry/Wet dip mask it.
 
+**Blurry UI in Ableton Live (crisp everywhere else).** Live's per-plugin
+**"Auto-Scale Plug-in Window"** option bitmap-stretches the GUI instead of
+letting it render at native resolution. Right-click the plugin in Live's
+browser and disable auto-scale, then reopen the plugin window — AkiTilt will
+render natively at your display's DPI and become crisp. (FL Studio and most
+other hosts render natively, which is why the difference shows up only in
+Live; this applies to every plugin, not just AkiTilt.)
+
 **Auto Formant drifts back in quiet passages.** By design: without a
 detectable pitch the tracked shift glides to the knob value over ~1.5 s, so
 the sound settles instead of freezing on a stale note. Sing/play sustained
@@ -441,6 +449,8 @@ A/B 保存两套完整设置；来回切换才能诚实地判断改动。
 **自动化。** 除 FFT 尺寸外的所有控件都可被宿主自动化。XY Pad 写入的是 Formant 与 Pitch 两个参数，pad 上的动作也可以画成自动化曲线。
 
 **切换 FFT 尺寸时有一瞬静音。** 更换分析窗口会重启 formant 引擎：湿路短暂无声,上报的延迟也随之变化。请停止播放时切换,或用 Dry/Wet 的短暂下降来掩盖。
+
+**在 Ableton Live 里界面发糊（其他宿主清晰）。** Live 的按插件设置 **"自动缩放插件窗口"（Auto-Scale Plug-in Window）** 会对界面做位图拉伸,而不是让插件按原生分辨率渲染。在 Live 浏览器里右键本插件、取消勾选自动缩放,再重新打开插件窗口——AkiTilt 会按显示器原生 DPI 渲染,恢复清晰。（FL Studio 等大多数宿主都是原生渲染,所以差异只在 Live 出现;这是所有插件的通病,并非 AkiTilt 特有。）
 
 **Auto Formant 在安静段落会滑回去。** 这是设计行为：检测不到音高时,跟踪的偏移在约 1.5 秒内滑回旋钮值,让声音落定而不是冻在旧的音符上。想锁得稳,就唱/弹持续音。
 
