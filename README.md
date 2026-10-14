@@ -1,6 +1,10 @@
 # AkiTilt
 
 [![build](https://github.com/AkiroMusic/AkiTilt/actions/workflows/build.yml/badge.svg)](https://github.com/AkiroMusic/AkiTilt/actions/workflows/build.yml)
+[![Release](https://img.shields.io/github/v/release/AkiroMusic/AkiTilt)](https://github.com/AkiroMusic/AkiTilt/releases/latest)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
+[![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS-lightgrey)](https://github.com/AkiroMusic/AkiTilt/releases/latest)
+[![Format](https://img.shields.io/badge/format-VST3%20%7C%20AU%20%7C%20Standalone-25b1a5)](https://github.com/AkiroMusic/AkiTilt/releases/latest)
 
 **Formant & texture morph for Botanica (petalcore) makers.**
 A VST3 / AU / Standalone audio plugin built with JUCE 8, styled with the Aki
