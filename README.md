@@ -1,5 +1,6 @@
 # AkiTilt
 
+[![Website](https://img.shields.io/badge/site-akiromusic.github.io-6D82FF)](https://akiromusic.github.io/AkiTilt/)
 [![build](https://github.com/AkiroMusic/AkiTilt/actions/workflows/build.yml/badge.svg)](https://github.com/AkiroMusic/AkiTilt/actions/workflows/build.yml)
 [![Release](https://img.shields.io/github/v/release/AkiroMusic/AkiTilt)](https://github.com/AkiroMusic/AkiTilt/releases/latest)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](LICENSE)
