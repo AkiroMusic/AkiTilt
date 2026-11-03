@@ -1,0 +1,124 @@
+/* ============================================================
+   Aurora Glass tokens — Aki Design System v2 (附录 A 对齐)
+   Per-site overrides load AFTER this file as palette.css
+   ============================================================ */
+:root {
+  --bg-base: #0C1220;
+  --surface-1: #151C2C;
+  --surface-2: #1E2839;
+  --surface-contrast: #060A14;
+  --border: #2B3852;
+  --text-primary: #EEF2F8;
+  --text-secondary: #8C97AC;
+  --text-tertiary: #5A6478;
+  --text-on-contrast: #EEF2F8;
+  --text-on-contrast-secondary: rgba(238, 242, 248, 0.62);
+
+  --accent: #6D82FF;
+  --accent-hover: #8A9BFF;
+  --accent-secondary: #2CC5E0;
+  --accent-tertiary: #F0A0D8;
+  --success: #4FAE8A;
+  --error: #D9695F;
+  --warning: #E8A33D;
+
+  --grad-a: #4860D9;
+  --grad-b: #2CC5E0;
+  --grad-c: #C4A8F5;
+
+  --aurora-1: 30%; --aurora-2: 22%; --aurora-3: 14%; --aurora-4: 10%;
+
+  --shadow-1: 0 1px 2px rgba(2, 6, 16, 0.4), 0 2px 8px rgba(2, 6, 16, 0.18);
+  --shadow-2: 0 2px 6px rgba(2, 6, 16, 0.4), 0 8px 24px rgba(2, 6, 16, 0.28);
+  --shadow-3: 0 4px 12px rgba(2, 6, 16, 0.45), 0 16px 48px rgba(2, 6, 16, 0.38);
+  --shadow-accent: 0 0 0 1px color-mix(in srgb, var(--accent) 25%, transparent),
+                   0 4px 20px color-mix(in srgb, var(--accent) 18%, transparent);
+
+  --glow-sm: 0 0 18px color-mix(in srgb, var(--grad-a) 22%, transparent);
+
+  --glass-bg: rgba(21, 28, 44, 0.62);
+  --glass-bg-strong: rgba(21, 28, 44, 0.82);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-blur: 16px;
+
+  --liquid-bg: rgba(21, 28, 44, 0.60);
+  --liquid-border: rgba(255, 255, 255, 0.09);
+  --specular: rgba(255, 255, 255, 0.10);
+  --inner-shade: rgba(0, 0, 0, 0.22);
+  --bezel-inner-line: rgba(255, 255, 255, 0.045);
+
+  --radius-sm: 10px; --radius-md: 16px; --radius-lg: 24px;
+  --radius-xl: 32px; --radius-full: 999px;
+
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-6: 24px; --space-8: 32px; --space-12: 48px; --space-16: 64px;
+
+  --ease-default: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-spring: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-hover: 150ms; --duration-panel: 220ms; --duration-spring: 320ms;
+
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --content-width: 1060px;
+}
+
+/* ---- 配色包：Amber Afterglow（暗 · 暖）---- */
+[data-pack='amber'] {
+  --bg-base: #1A1210; --surface-1: #261916; --surface-2: #32211C;
+  --surface-contrast: #140C0A; --border: #4A332B;
+  --text-primary: #F5EDE4; --text-secondary: #A89688; --text-tertiary: #6E5F52;
+  --text-on-contrast: #F5EDE4; --text-on-contrast-secondary: rgba(245, 237, 228, 0.62);
+  --accent: #E58A5A; --accent-hover: #F0A276; --accent-secondary: #F2C28F; --accent-tertiary: #D98E9C;
+  --grad-a: #B84A3A; --grad-b: #E58A5A; --grad-c: #F2C28F;
+  --aurora-1: 26%; --aurora-2: 19%; --aurora-3: 12%; --aurora-4: 9%;
+  --success: #58A873; --error: #E06552; --warning: #E8A33D;
+  --shadow-1: 0 1px 2px rgba(16, 8, 5, 0.4), 0 2px 8px rgba(16, 8, 5, 0.2);
+  --shadow-2: 0 2px 6px rgba(16, 8, 5, 0.4), 0 10px 28px rgba(16, 8, 5, 0.28);
+  --shadow-3: 0 4px 12px rgba(16, 8, 5, 0.45), 0 20px 56px rgba(16, 8, 5, 0.36);
+  --glass-bg: rgba(38, 25, 22, 0.62); --glass-bg-strong: rgba(38, 25, 22, 0.82);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --liquid-bg: rgba(38, 25, 22, 0.6); --liquid-border: rgba(255, 255, 255, 0.09);
+}
+
+/* ---- 配色包：Mint Fresh（浅 · 清新）---- */
+[data-pack='mint'] {
+  --bg-base: #E8F0E5; --surface-1: #F4F8F0; --surface-2: #DCE7DA;
+  --surface-contrast: #22362A; --border: #C9D8C6;
+  --text-primary: #2F4A3A; --text-secondary: #6B7268; --text-tertiary: #98A69A;
+  --text-on-contrast: #E8F0E5; --text-on-contrast-secondary: rgba(232, 240, 229, 0.64);
+  --accent: #3D624C; --accent-hover: #32513F; --accent-secondary: #8FA89A; --accent-tertiary: #D9A38E;
+  --grad-a: #8FA89A; --grad-b: #A3C4A9; --grad-c: #B5D7C3;
+  --aurora-1: 15%; --aurora-2: 10%; --aurora-3: 6%; --aurora-4: 4%;
+  --success: #4E8F68; --error: #C4584E; --warning: #C08A3D;
+  --shadow-1: 0 1px 2px rgba(47, 58, 50, 0.06), 0 2px 8px rgba(47, 58, 50, 0.05);
+  --shadow-2: 0 2px 6px rgba(47, 58, 50, 0.07), 0 10px 28px rgba(47, 58, 50, 0.09);
+  --shadow-3: 0 4px 12px rgba(47, 58, 50, 0.08), 0 20px 56px rgba(47, 58, 50, 0.12);
+  --glass-bg: rgba(244, 248, 240, 0.68); --glass-bg-strong: rgba(244, 248, 240, 0.88);
+  --glass-border: rgba(47, 74, 58, 0.08);
+  --liquid-bg: rgba(255, 255, 255, 0.55); --liquid-border: rgba(255, 255, 255, 0.65);
+  --specular: rgba(255, 255, 255, 0.85); --inner-shade: rgba(47, 58, 50, 0.08);
+  --bezel-inner-line: rgba(0, 0, 0, 0.04);
+}
+
+/* ---- 配色包：Pearl Blush Mist（浅 · 雾粉）---- */
+[data-pack='pearl'] {
+  --bg-base: #F0E8EE; --surface-1: #FAF5F8; --surface-2: #E4D8E2;
+  --surface-contrast: #2E2430; --border: #D4C4D2;
+  --text-primary: #3A2F3C; --text-secondary: #8A7A8C; --text-tertiary: #B4A6B6;
+  --text-on-contrast: #F7EFF4; --text-on-contrast-secondary: rgba(247, 239, 244, 0.64);
+  --accent: #B27A94; --accent-hover: #9C6580; --accent-secondary: #9B86BE; --accent-tertiary: #7E9CC0;
+  --grad-a: #D9AFC0; --grad-b: #C8B7D8; --grad-c: #AFC5DE;
+  --aurora-1: 16%; --aurora-2: 11%; --aurora-3: 7%; --aurora-4: 5%;
+  --success: #5A9E7A; --error: #C45868; --warning: #C08A3D;
+  --shadow-1: 0 1px 2px rgba(58, 42, 52, 0.06), 0 2px 8px rgba(58, 42, 52, 0.05);
+  --shadow-2: 0 2px 6px rgba(58, 42, 52, 0.07), 0 10px 28px rgba(58, 42, 52, 0.09);
+  --shadow-3: 0 4px 12px rgba(58, 42, 52, 0.08), 0 20px 56px rgba(58, 42, 52, 0.12);
+  --glass-bg: rgba(250, 245, 248, 0.68); --glass-bg-strong: rgba(250, 245, 248, 0.88);
+  --glass-border: rgba(58, 42, 52, 0.08);
+  --liquid-bg: rgba(255, 255, 255, 0.55); --liquid-border: rgba(255, 255, 255, 0.65);
+  --specular: rgba(255, 255, 255, 0.85); --inner-shade: rgba(58, 42, 52, 0.08);
+  --bezel-inner-line: rgba(0, 0, 0, 0.04);
+}

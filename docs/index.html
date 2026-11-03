@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" data-pack="mint">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AkiTilt — Formant &amp; texture morph plugin</title>
+<meta name="description" content="Formant &amp; texture morph for Botanica (petalcore) makers — shift the spectral envelope without losing the note.">
+<meta property="og:title" content="AkiTilt — Formant &amp; texture morph plugin">
+<meta property="og:description" content="Formant &amp; texture morph for Botanica (petalcore) makers — shift the spectral envelope without losing the note.">
+<meta property="og:url" content="https://akiromusic.github.io/AkiTilt/">
+<meta property="og:image" content="https://raw.githubusercontent.com/AkiroMusic/AkiTilt/main/docs/assets/akitilt-ui.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..700&family=IBM+Plex+Mono:wght@400;600&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tokens.css">
+
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="aurora-bg"></div>
+<div class="aurora-sweep"></div>
+<div class="star-field"></div>
+<div class="noise-overlay"></div>
+
+<header class="site-nav material-frosted">
+  <a class="brand" href="#"><span class="star"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c.9 6.5 4.6 10.2 12 12-7.4 1.8-11.1 5.5-12 12-.9-6.5-4.6-10.2-12-12C7.4 10.2 11.1 6.5 12 0z"/></svg></span>AkiTilt</a>
+  <nav>
+    <a href="#features">Features</a>
+    <a href="#details">Details</a>
+    <a href="https://github.com/AkiroMusic/AkiTilt" class="nav-keep">GitHub ↗</a>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div class="hero-card panel-contrast material-film flow-nebula spring-in">
+      <div class="eyebrow"><span class="star"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c.9 6.5 4.6 10.2 12 12-7.4 1.8-11.1 5.5-12 12-.9-6.5-4.6-10.2-12-12C7.4 10.2 11.1 6.5 12 0z"/></svg></span>Audio Plugin · VST3 / AU / Standalone</div>
+      <h1>Aki<span class="grad-text">Tilt</span></h1>
+      <p class="tagline">Formant &amp; texture morph for Botanica (petalcore) makers — shift the spectral envelope without losing the note.</p>
+      <div class="badge-row"><span class="badge">License <b>GPL-3.0</b></span><span class="badge">Platform <b>Windows · macOS</b></span><span class="badge">Format <b>VST3 · AU · Standalone</b></span><span class="badge">Framework <b>JUCE 8</b></span></div>
+      <div class="cta-row">
+          <a class="btn btn-primary" href="https://github.com/AkiroMusic/AkiTilt/releases/latest">Download latest</a>
+          <a class="btn btn-ghost" href="https://github.com/AkiroMusic/AkiTilt">Source code</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="features">
+    <div class="block-head">
+      <div class="eyebrow"><span class="star"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c.9 6.5 4.6 10.2 12 12-7.4 1.8-11.1 5.5-12 12-.9-6.5-4.6-10.2-12-12C7.4 10.2 11.1 6.5 12 0z"/></svg></span>Features</div>
+      <h2>What it does</h2>
+      <p class="sub">AkiTilt grew out of how producers in the Botanica scene shape voices and textures: automating formant on guitar loops, morphing voices into new characters, tuning noise into air. A JUCE 8 plugin styled with the Mint Fresh theme of the Aki Design System.</p>
+    </div>
+    <div class="feature-grid">
+          <article class="feature-card material-liquid double-bezel spring-in wide" style="animation-delay:80ms"><div class="f-icon">🎛️</div><h3>Spectral formant engine</h3><p>Shifts the spectral envelope ±1200 ct without changing pitch — the spectral approach used by Color Transfer-style shifters.</p></article>
+          <article class="feature-card material-liquid double-bezel spring-in" style="animation-delay:140ms"><div class="f-icon">🎼</div><h3>Auto Formant</h3><p>Tracks input pitch and shifts formants with it; the knob becomes a fine offset for expressive rides.</p></article>
+          <article class="feature-card material-liquid double-bezel spring-in" style="animation-delay:200ms"><div class="f-icon">🎚️</div><h3>Companion controls</h3><p>Pitch (±12 st granular), tilt EQ (±12 dB), mid/side width and an Air noise bed in one panel.</p></article>
+          <article class="feature-card material-liquid double-bezel spring-in" style="animation-delay:260ms"><div class="f-icon">✨</div><h3>XY pad + spectrum</h3><p>Formant × pitch XY pad with live spectrum display, plus 9 factory presets and plain-XML user presets.</p></article>
+          <article class="feature-card material-liquid double-bezel spring-in" style="animation-delay:320ms"><div class="f-icon">🅰️</div><h3>A/B compare</h3><p>Instant A/B compare, in/out level meters and full host automation with latency reporting.</p></article>
+          <article class="feature-card material-liquid double-bezel spring-in" style="animation-delay:380ms"><div class="f-icon">⚙️</div><h3>Tunable analysis</h3><p>Bands 0–32 and FFT size 128–4096 — trade latency for formant smoothness to fit the material.</p></article>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="block-head">
+      <div class="eyebrow"><span class="star"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c.9 6.5 4.6 10.2 12 12-7.4 1.8-11.1 5.5-12 12-.9-6.5-4.6-10.2-12-12C7.4 10.2 11.1 6.5 12 0z"/></svg></span>Screenshot</div>
+    </div>
+    <div class="shot-frame material-liquid double-bezel spring-in">
+      <img src="assets/akitilt-ui.png" alt="AkiTilt main interface" loading="lazy">
+    </div>
+  </section>
+
+  <section class="block" id="details">
+    <div class="block-head">
+      <div class="eyebrow"><span class="star"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c.9 6.5 4.6 10.2 12 12-7.4 1.8-11.1 5.5-12 12-.9-6.5-4.6-10.2-12-12C7.4 10.2 11.1 6.5 12 0z"/></svg></span>Details</div>
+      <h2>Modules</h2>
+    </div>
+    <div class="detail-card material-liquid double-bezel"><table class="detail-table"><thead><tr><th>Module</th><th>Range</th><th>What it does</th></tr></thead><tbody><tr><td>Formant</td><td>±1200 ct</td><td>Shifts the spectral envelope without changing pitch</td></tr><tr><td>Auto Formant</td><td>on/off</td><td>Tracks input pitch; knob becomes a fine offset</td></tr><tr><td>Bands</td><td>0–32</td><td>Spectral-envelope analysis resolution</td></tr><tr><td>Pitch</td><td>±12 st</td><td>Granular pitch shift, decoupled from formant</td></tr><tr><td>Tilt</td><td>±12 dB</td><td>One-knob brightness tilt with loudness compensation</td></tr><tr><td>Width</td><td>0–200 %</td><td>Mid/side stereo widening on the wet path</td></tr><tr><td>Air + Tone</td><td>0–100 %</td><td>Filtered noise bed, warm hiss to open air</td></tr><tr><td>Out</td><td>−24…+12 dB</td><td>Output trim into a soft tanh limiter</td></tr><tr><td>FFT Size</td><td>128–4096</td><td>Analysis window: latency vs. formant smoothness</td></tr></tbody></table></div>
+  </section>
+
+  <section class="block" id="quick-start">
+    <div class="block-head">
+      <div class="eyebrow"><span class="star"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c.9 6.5 4.6 10.2 12 12-7.4 1.8-11.1 5.5-12 12-.9-6.5-4.6-10.2-12-12C7.4 10.2 11.1 6.5 12 0z"/></svg></span>Quick Start</div>
+      <h2>Install in seconds</h2>
+    </div>
+    <div class="qs-grid">
+      <div class="qs-steps material-liquid double-bezel spring-in">
+        <ol><li><b>Download</b> the latest release for your OS.</li><li><b>VST3</b> — copy <b>AkiTilt.vst3</b> into your system VST3 folder.</li><li><b>macOS AU</b> — copy <b>AkiTilt.component</b> into /Library/Audio/Plug-Ins/Components.</li><li>Reload your DAW and look for <b>AkiTilt</b> in the plugin list.</li></ol>
+      </div>
+      <div class="code-card panel-contrast spring-in" style="animation-delay:80ms">
+        <div class="code-title"><span class="dot"></span>shell — build from source</div>
+        <pre>git clone --depth 1 --branch 8.0.8 \
+  https://github.com/juce-framework/JUCE.git libs/JUCE
+
+cmake -S . -B build -G &quot;Visual Studio 17 2022&quot; -A x64
+cmake --build build --config Release
+
+# release/AkiTilt.vst3 — fresh copy on every build</pre>
+      </div>
+    </div>
+  </section>
+
+  <div class="block" style="text-align:center"><p class="quote-line">“Grow timbres, don&#x27;t just tweak them.”</p></div>
+
+  <div class="hairline"></div>
+
+  <section class="block i18n-cn" id="中文" lang="zh-CN">
+    <div class="block-head">
+      <div class="eyebrow"><span class="star"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c.9 6.5 4.6 10.2 12 12-7.4 1.8-11.1 5.5-12 12-.9-6.5-4.6-10.2-12-12C7.4 10.2 11.1 6.5 12 0z"/></svg></span>音频插件 · VST3 / AU / 独立运行</div>
+      <h2>项目简介</h2>
+      <p class="sub">AkiTilt 源自 Botanica 场景制作人对人声与质感的处理方式：在吉他循环上自动化共振峰、把人声变形为新的角色、把噪声调校成空气感。基于 JUCE 8 构建，采用 Aki 设计系统的 Mint Fresh 主题。</p>
+    </div>
+    <div class="feature-grid">
+          <article class="feature-card material-liquid double-bezel spring-in" style="animation-delay:80ms"><div class="f-icon">🎛️</div><h3>频谱共振峰引擎</h3><p>在不改变音高的前提下移动频谱包络 ±1200 ct，采用 Color Transfer 一类工具的频谱方案。</p></article>
+          <article class="feature-card material-liquid double-bezel spring-in" style="animation-delay:140ms"><div class="f-icon">🎼</div><h3>自动共振峰</h3><p>跟随输入音高同步移动共振峰，旋钮变为微调偏移，方便自动化演奏。</p></article>
+          <article class="feature-card material-liquid double-bezel spring-in" style="animation-delay:200ms"><div class="f-icon">🎚️</div><h3>配套控制</h3><p>Pitch（±12 st 粒度移调）、Tilt EQ（±12 dB）、mid/side 宽度与 Air 噪声床，一屏齐备。</p></article>
+          <article class="feature-card material-liquid double-bezel spring-in" style="animation-delay:260ms"><div class="f-icon">✨</div><h3>XY 板 + 频谱</h3><p>共振峰 × 音高 XY 控制板带实时频谱，内置 9 个出厂预设与纯 XML 用户预设。</p></article>
+          <article class="feature-card material-liquid double-bezel spring-in" style="animation-delay:320ms"><div class="f-icon">🅰️</div><h3>A/B 对比</h3><p>A/B 即时对比、输入输出电平表与完整宿主自动化，含延迟上报。</p></article>
+          <article class="feature-card material-liquid double-bezel spring-in" style="animation-delay:380ms"><div class="f-icon">⚙️</div><h3>可调分析</h3><p>Bands 0–32 与 FFT 128–4096，在延迟与共振峰平滑度之间按素材取舍。</p></article>
+    </div>
+    <div class="block-head" style="margin-top:var(--space-8)">
+      <div class="eyebrow"><span class="star"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c.9 6.5 4.6 10.2 12 12-7.4 1.8-11.1 5.5-12 12-.9-6.5-4.6-10.2-12-12C7.4 10.2 11.1 6.5 12 0z"/></svg></span>明细</div>
+      <h2>模块一览</h2>
+    </div>
+    <div class="detail-card material-liquid double-bezel"><table class="detail-table"><thead><tr><th>模块</th><th>范围</th><th>作用</th></tr></thead><tbody><tr><td>Formant</td><td>±1200 ct</td><td>在不改变音高的前提下移动频谱包络</td></tr><tr><td>Auto Formant</td><td>on/off</td><td>跟随输入音高，旋钮变为微调偏移</td></tr><tr><td>Bands</td><td>0–32</td><td>频谱包络分析分辨率</td></tr><tr><td>Pitch</td><td>±12 st</td><td>粒度音高移调，与共振峰解耦</td></tr><tr><td>Tilt</td><td>±12 dB</td><td>单旋钮明暗倾斜，带响度补偿</td></tr><tr><td>Width</td><td>0–200 %</td><td>湿信号 mid/side 立体声加宽</td></tr><tr><td>Air + Tone</td><td>0–100 %</td><td>滤波噪声床，从暖嘶声到开阔空气感</td></tr><tr><td>Out</td><td>−24…+12 dB</td><td>输出微调，进入软 tanh 限制器</td></tr><tr><td>FFT Size</td><td>128–4096</td><td>分析窗长：延迟与共振峰平滑度的取舍</td></tr></tbody></table></div>
+    <div class="qs-grid" style="margin-top:var(--space-8)">
+      <div class="qs-steps material-liquid double-bezel spring-in">
+        <ol><li><b>下载</b>对应系统的最新版本。</li><li><b>VST3</b> — 将 <b>AkiTilt.vst3</b> 复制到系统 VST3 目录。</li><li><b>macOS AU</b> — 将 <b>AkiTilt.component</b> 复制到 /Library/Audio/Plug-Ins/Components。</li><li>重载 DAW，在插件列表中找到 <b>AkiTilt</b>。</li></ol>
+      </div>
+      <div class="code-card panel-contrast spring-in" style="animation-delay:80ms">
+        <div class="code-title"><span class="dot"></span>shell — build from source</div>
+        <pre>git clone --depth 1 --branch 8.0.8 \
+  https://github.com/juce-framework/JUCE.git libs/JUCE
+
+cmake -S . -B build -G &quot;Visual Studio 17 2022&quot; -A x64
+cmake --build build --config Release
+
+# release/AkiTilt.vst3 — fresh copy on every build</pre>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <footer class="site-footer">
+    <div class="footer-row material-liquid">
+      <div>
+        <a class="brand" href="#"><span class="star"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0c.9 6.5 4.6 10.2 12 12-7.4 1.8-11.1 5.5-12 12-.9-6.5-4.6-10.2-12-12C7.4 10.2 11.1 6.5 12 0z"/></svg></span>AkiTilt</a>
+        <p class="footer-meta" style="margin-top:var(--space-3);max-width:340px">Formant &amp; texture morph for Botanica (petalcore) makers — shift the spectral envelope without losing the note.</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/AkiroMusic/AkiTilt">Source code ↗</a>
+        <a href="https://github.com/AkiroMusic/AkiTilt/releases/latest">Releases ↗</a>
+      </div>
+      <div class="footer-links">
+        <a href="https://akiromusic.com/">akiromusic.com ↗</a>
+        <a href="https://github.com/AkiroMusic">GitHub Profile ↗</a>
+        <a href="https://akiromusic.github.io/AkiroMusic/">All project sites ↗</a>
+      </div>
+    </div>
+    <p class="footer-meta">© 2026 Akiro · GPL-3.0 licensed. Built with the Aurora Glass design system.</p>
+  </footer>
+
+</main>
+</body>
+</html>
